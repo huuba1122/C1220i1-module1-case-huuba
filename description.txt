@@ -1,0 +1,14 @@
+18/1/2021
+
+luồng chương trình:
+
+tạo một khối gồm n hàng n cột đặt tên cùng một class
+gom tất cả các ô đó vào một mảng gọi bằng querySelectorAll
+gọi random một phân tử (ô) trong mảng và add thêm class để cho con mèo xuất hiện
+dùng forEach thêm sự kiện onclick vào tất thẻ chứa con mèo
+khi con mèo xuất hiện thì ta click vào sẽ được cộng điểm
+set thời gian cho chương trình chạy sau một khoảng thời gian bằng lệnh setTimeout
+
+// hiện tại em mới làm được đến đó theo kiểu logic tuần tự
+e đang khá bối rối khi chuyển thành các đối tượng và class
+nếu anh Hoàng đọc được những lời này có thể cho em lời gợi ý em rất cảm ơn. haizz mai phỏng vấn rồi!!

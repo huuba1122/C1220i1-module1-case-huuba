@@ -1,0 +1,58 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: cornflowerblue;
+    display: flex;
+    justify-content: center;
+}
+.header, .score{
+    font-size: 32px;
+    color: red;
+    text-align: center;
+}
+.holes{
+    /*display: flex;*/
+    /*flex-wrap: wrap;*/
+    /*width: 630px;*/
+    /*height: 630px;*/
+    background-color: yellow;
+    border: 1px solid red;
+    /*justify-content: space-around;*/
+}
+.hole {
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border: 1px solid black;
+    position: relative;
+    overflow: hidden;
+}
+.buttons{
+    text-align: center;
+    margin-top: 20px;
+}
+.start, .stop{
+    padding: 20px;
+}
+.cat{
+    position: absolute;
+    width: 100%;
+    background-image: url("tom2-removebg.png");
+    height: 100%;
+    top: 100%;
+    z-index: 1;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    /*top: 100%;*/
+    /*left: 50%;*/
+    /*transform: translate(-50%);*/
+    /*pointer-events: none;*/
+}
+
+.hole.up .cat{
+    top: 0;
+}
