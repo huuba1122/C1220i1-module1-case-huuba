@@ -14,40 +14,88 @@
     </div>
     <div class="score">0</div>
     <table class="holes" id="my-hole">
-<!--        <div class="hole hole1">-->
-<!--            <div class="cat"></div>-->
-<!--        </div>-->
-<!--        <div class="hole hole2">-->
-<!--            <div class="cat"></div>-->
-<!--        </div>-->
-<!--        <div class="hole hole3">-->
-<!--            <div class="cat"></div>-->
-<!--        </div>-->
-<!--        <div class="hole hole4">-->
-<!--            <div class="cat"></div>-->
-<!--        </div>-->
-<!--        <div class="hole hole5">-->
-<!--            <div class="cat"></div>-->
-<!--        </div>-->
-<!--        <div class="hole hole6">-->
-<!--            <div class="cat"></div>-->
-<!--        </div>-->
-<!--        <div class="hole hole7">-->
-<!--            <div class="cat"></div>-->
-<!--        </div>-->
-<!--        <div class="hole hole8">-->
-<!--            <div class="cat"></div>-->
-<!--        </div>-->
-<!--        <div class="hole hole9">-->
-<!--            <div class="cat"></div>-->
-<!--        </div>-->
+
     </table>
     <div class="buttons">
         <button class="start" onclick="startGame()">START</button>
+        <button class="stop" onclick="stopGame()">STOP</button>
 <!--        <button class="stop">STOP</button>-->
     </div>
 </div>
+<div class="cursor"><img src="hamer1-removebg-preview.png"></div>
 
 </body>
-<script src="test1.js"></script>
+<!--<script src="test1.js"></script>-->
+<script src="classHole.js"></script>
+
+<script>
+    /**     Khai báo ban đầu    */
+    let holes = [];
+    let cats = [];
+    let scoreBoard = document.querySelector('.score');
+    let cursor = document.querySelector(".cursor img");
+
+    let score;
+    let flag;
+    let timelife = 45000;
+
+    /**     tạo bảng gồm n hàng n cột   */
+
+    function createHoles(number) {
+        let html = ``;
+
+        for (let i = 1; i <= number ; i++) {
+            html += `<tr>`;
+            for (let j = 1; j <= number; j++) {
+                html += `<td class="hole hole${j}">
+            <div class="cat"></div>
+            </td>`
+            }
+            html += `</tr>`;
+        }
+
+        document.getElementById('my-hole').innerHTML = html;
+        holes= document.querySelectorAll('.hole');
+        cats = document.querySelectorAll('.cat');
+    }
+    createHoles(4);
+    function addScore(){
+        score ++;
+        scoreBoard.textContent = score;
+    }
+
+    function startGame(){
+        // flag = false;
+        score =0;
+        scoreBoard.textContent = 0;
+        let hol = new hole(holes,flag);
+        console.log(holes);
+        let returnHol = setInterval(function (){
+            hol.appearcat();
+
+        },1000);
+
+        setTimeout(function (){
+            clearInterval(returnHol);
+        },timelife)
+    }
+    cats.forEach(function (cat){
+        cat.addEventListener('click', addScore);
+    });
+
+    /***            chuột       */
+    window.addEventListener("mousemove", function (position){
+        cursor.style.top = position.pageY + "px";
+        cursor.style.left = position.pageX + "px";
+        // console.log(position);
+        window.addEventListener("click", function () {
+            cursor.style.animation = "hit 0.1s ease";
+            setTimeout(function () {
+                cursor.style.removeProperty("animation");
+            }, 100);
+        });
+    });
+
+</script>
+
 </html>

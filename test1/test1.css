@@ -31,12 +31,25 @@ body{
     position: relative;
     overflow: hidden;
 }
+/*.buttons{*/
+/*    text-align: center;*/
+/*    margin-top: 20px;*/
+/*}*/
 .buttons{
+    margin-top: 50px;
     text-align: center;
-    margin-top: 20px;
+    /*padding: 15px 45px;*/
+    /*background-color: inherit;*/
+    /*border: 1px solid #fff;*/
+    color: #fff;
+    border-radius: 3px;
+    outline: none;
 }
 .start, .stop{
     padding: 20px;
+}
+.stop{
+    display: none;
 }
 .cat{
     position: absolute;
@@ -55,4 +68,20 @@ body{
 
 .hole.up .cat{
     top: 0;
+}
+
+.cursor img {
+    position: absolute;
+    height: 200px;
+    z-index: 2;
+    transform: translate(-40px, -70px);
+    pointer-events: none;
+}
+@keyframes hit {
+    from {
+        transform: rotate(30deg);
+    }
+    to {
+        transform: rotate(-15deg);
+    }
 }

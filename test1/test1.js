@@ -5,7 +5,7 @@ let scoreBoard = document.querySelector('.score');
 // console.log(holes);
 
 
-let lasthole;
+// let lasthole;
 let score;
 let flag;
 let timelife = 15000;
@@ -16,15 +16,15 @@ let timelife = 15000;
 // // });
 //
 /***        random hole         */
-function randomHole(holes){
-    let index = Math.floor(Math.random() * holes.length);
-    let hole= holes[index];
-    // if(hole == lasthole){
-    //     randomHole(holes);
-    // }
-    // lasthole = hole;
-    return hole;
-}
+// function randomHole(holes){
+//     let index = Math.floor(Math.random() * holes.length);
+//     let hole= holes[index];
+//     // if(hole == lasthole){
+//     //     randomHole(holes);
+//     // }
+//     // lasthole = hole;
+//     return hole;
+// }
     /** tạo một khối có number ô */
 function createHoles(number) {
     let html = ``;
@@ -46,17 +46,18 @@ function createHoles(number) {
 createHoles(4);
 
 /***        appear cat sau 0.5 */
-function appearcat (){
-    let hole = randomHole(holes);
-    hole.classList.add('up');       // thêm class "up" vào hole được chọn tức là cho mèo xuât hiện ở ô này
-    console.log(hole);
-    setTimeout(function (){
-        hole.classList.remove('up') // sau 0.5s thì cho mèo biến mất bằng cách gõ class "up".
-            if (!flag) {
-                appearcat();
-            }
-        }, 1000);
-}
+// function appearcat (){
+//     let hole = randomHole(holes);
+//     hole.classList.add('up');       // thêm class "up" vào hole được chọn tức là cho mèo xuât hiện ở ô này
+//     console.log(hole);
+//     setTimeout(function (){
+//         hole.classList.remove('up') // sau 0.5s thì cho mèo biến mất bằng cách gõ class "up".
+//             if (!flag) {
+//                 appearcat();
+//             }
+//         }, 1000);
+// }
+
 
 function addScore(){
     score ++;
@@ -69,6 +70,7 @@ function startGame(){
     flag = false;
     score =0;
     scoreBoard.textContent = 0;
+
     appearcat()
     setTimeout(function (){
         flag = true;
