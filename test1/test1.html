@@ -7,19 +7,23 @@
 
 </head>
 <body>
-
+<audio autoplay id="id-audio">
+    <source src="../mp3/MainTheme.mp3">
+</audio>
 <div class="main">
     <div class="header">
         <h2>demo đập chuột</h2>
+        <div class="score">0</div>
+        <h2 id="status">00:00</h2>
     </div>
-    <div class="score">0</div>
-    <table class="holes" id="my-hole">
+    <div class="games">
+        <table class="holes" id="my-hole">
 
-    </table>
+        </table>
+    </div>
     <div class="buttons">
         <button class="start" onclick="startGame()">START</button>
         <button class="stop" onclick="stopGame()">STOP</button>
-<!--        <button class="stop">STOP</button>-->
     </div>
 </div>
 <div class="cursor"><img src="hamer1-removebg-preview.png"></div>
@@ -29,14 +33,20 @@
 <script src="classHole.js"></script>
 
 <script>
+
     /**     Khai báo ban đầu    */
     let holes = [];
     let cats = [];
     let scoreBoard = document.querySelector('.score');
     let cursor = document.querySelector(".cursor img");
+    let status = document.getElementById('status');
+    let startBtn =document.querySelector('.start');
+    let stopBtn =document.querySelector('.stop');
 
     let score;
-    let flag;
+    let timeMin = 500;
+    let timeMax = 1000;
+
     let timelife = 45000;
 
     /**     tạo bảng gồm n hàng n cột   */
@@ -44,10 +54,10 @@
     function createHoles(number) {
         let html = ``;
 
-        for (let i = 1; i <= number ; i++) {
+        for (let i = 1; i <=3 ; i++) {
             html += `<tr>`;
             for (let j = 1; j <= number; j++) {
-                html += `<td class="hole hole${j}">
+                html += `<td class="hole hole${i}${j}">
             <div class="cat"></div>
             </td>`
             }
@@ -59,17 +69,25 @@
         cats = document.querySelectorAll('.cat');
     }
     createHoles(4);
+
+    /**             point*/
     function addScore(){
         score ++;
         scoreBoard.textContent = score;
     }
+    // window.addEventListener("click", function (e) {
+    //     console.log(e.target);
+    //     if (e.target === hole) score.innerText = ++points;
+    // });
 
+    /***                starts game         */
     function startGame(){
         // flag = false;
         score =0;
         scoreBoard.textContent = 0;
-        let hol = new hole(holes,flag);
-        console.log(holes);
+        let hol = new hole(holes,timeMin,timeMax);
+        console.log(hol);
+        startCounter();
         let returnHol = setInterval(function (){
             hol.appearcat();
 
@@ -82,6 +100,8 @@
     cats.forEach(function (cat){
         cat.addEventListener('click', addScore);
     });
+    /***            stop game       */
+
 
     /***            chuột       */
     window.addEventListener("mousemove", function (position){
@@ -95,6 +115,48 @@
             }, 100);
         });
     });
+
+    /**             counter             */
+    function startCounter() {
+        updateStatus(timelife)
+        startTime = new Date().getTime();
+        var x = setInterval(function () {
+
+            // Get current time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = timelife - (now - startTime);
+
+            updateStatus(distance)
+
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                // timeUp = true;
+                status.innerHTML = "Game Over!!!!! Your score : " + score;
+            }
+        }, 1000);
+    }
+
+    function updateStatus(distance) {
+        // Time calculations for minutes and seconds
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display to status
+        status.innerHTML = getDisplayTime(minutes) + ":" + getDisplayTime(seconds);
+    }
+
+    function getDisplayTime(time) {
+        if (time < 10)
+            return "0" + time;
+
+        return "" + time;
+    }
+
+    /**         highScore board         */
+
 
 </script>
 

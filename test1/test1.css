@@ -5,36 +5,65 @@
     box-sizing: border-box;
 }
 body{
-    background-color: cornflowerblue;
-    display: flex;
-    justify-content: center;
+
 }
-.header, .score{
+h2{
+    color: yellow;
+}
+.main{
+    background-image: url("bground4.png");
+    /*display: flex;*/
+    height: 700px;
+    justify-content: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.header{
+    width: 100%;
+    height: 220px;
+    box-sizing: border-box;
+}
+.score{
     font-size: 32px;
     color: red;
     text-align: center;
 }
+.games{
+    width: 100%;
+    height: 350px;
+    justify-items: center;
+    display: flex;
+}
+
 .holes{
-    /*display: flex;*/
     /*flex-wrap: wrap;*/
     /*width: 630px;*/
     /*height: 630px;*/
-    background-color: yellow;
-    border: 1px solid red;
+    /*background-color: yellow;*/
+    /*border: 1px solid red;*/
     /*justify-content: space-around;*/
+    border-spacing: 40px;
+    margin: auto;
+
 }
+
 .hole {
-    width: 200px;
-    height: 200px;
-    background-color: white;
-    border: 1px solid black;
+    width: 120px;
+    height: 80px;
+    background-image: url("hole2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*background-size: auto;*/
+    /*background: rgba(5, 26, 65, 0.5);*/
+    /*border: 1px solid black;*/
+    /*border-radius: 50% 50%;*/
     position: relative;
     overflow: hidden;
+    outline: none;
+
 }
-/*.buttons{*/
-/*    text-align: center;*/
-/*    margin-top: 20px;*/
-/*}*/
+
+
 .buttons{
     margin-top: 50px;
     text-align: center;
@@ -46,7 +75,7 @@ body{
     outline: none;
 }
 .start, .stop{
-    padding: 20px;
+    padding: 5px 30px;
 }
 .stop{
     display: none;
@@ -54,27 +83,27 @@ body{
 .cat{
     position: absolute;
     width: 100%;
-    background-image: url("tom2-removebg.png");
+    background-image: url("zombie22.png");
     height: 100%;
     top: 100%;
-    z-index: 1;
-    background-size: 100%;
+    /*z-index: 1;*/
+    background-size: 50%;
     background-repeat: no-repeat;
+    transition: 0.4s;
     /*top: 100%;*/
-    /*left: 50%;*/
-    /*transform: translate(-50%);*/
+    left: 35px;
     /*pointer-events: none;*/
 }
 
 .hole.up .cat{
-    top: 0;
+    top: 16%;
 }
 
 .cursor img {
     position: absolute;
-    height: 200px;
+    height: 100px;
     z-index: 2;
-    transform: translate(-40px, -70px);
+    transform: translate(-25px, -40px);
     pointer-events: none;
 }
 @keyframes hit {
