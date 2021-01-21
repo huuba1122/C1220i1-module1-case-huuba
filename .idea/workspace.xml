@@ -32,6 +32,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../codegym/baiGit+HTML/Vonglap" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -69,6 +70,8 @@
       <workItem from="1611182651090" duration="3627000" />
       <workItem from="1611191744854" duration="2315000" />
       <workItem from="1611196490978" duration="862000" />
+      <workItem from="1611204621742" duration="99000" />
+      <workItem from="1611237170743" duration="7033000" />
     </task>
     <servers />
   </component>

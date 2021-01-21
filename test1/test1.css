@@ -4,9 +4,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
 
-}
 h2{
     color: yellow;
 }
@@ -18,21 +16,78 @@ h2{
     background-size: cover;
     background-repeat: no-repeat;
 }
-.header{
+.heading{
+    padding: 20px;
     width: 100%;
-    height: 220px;
-    box-sizing: border-box;
-}
-.score{
-    font-size: 32px;
-    color: red;
+    height: 80px;
+    /*background-color: antiquewhite;*/
     text-align: center;
+    align-items: center;
+    font-family: cursive;
+    color: chartreuse;
+}
+.heading span{
+    font-size: 50px;
+}
+.header-item {
+    margin-top: 10px;
+    /*display: flex;*/
+    /*justify-content: space-between;*/
+    position: relative;
+}
+.header-audio{
+   position: absolute;
+
+}
+.header-time{
+    /*margin-top: 10px;*/
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    top: 20px;
+    transform: translate(-50%);
+}
+
+/*.header{*/
+/*    width: 100%;*/
+/*    height: 150px;*/
+/*    !*background-color: yellow;*!*/
+/*    !*box-sizing: border-box;*!*/
+/*    justify-content: space-between;*/
+/*}*/
+.score, #status{
+    font-size: 32px;
+    color: #ff015f;
+    /*text-align: center;*/
+}
+.highBoard{
+    /*margin-top: 10px;*/
+    position: absolute;
+    top: 0;
+    right: 20px;
+    font-size: 32px;
+    color: #ff015f;
+}
+.scoretable{
+    width: 180px;
+    color: white;
+    font-size: 24px;
+    /*border: 1px solid red;*/
+    background-color: #2f5d96;
+    border-radius: 5px;
+    border-collapse: collapse;
+}
+th, td{
+    padding: 5px 0;
+    border: 1px solid wheat;
 }
 .games{
+    margin-top: 40px;
     width: 100%;
     height: 350px;
     justify-items: center;
     display: flex;
+    /*background-color: white;*/
 }
 
 .holes{
@@ -55,7 +110,7 @@ h2{
     background-size: cover;
     /*background-size: auto;*/
     /*background: rgba(5, 26, 65, 0.5);*/
-    /*border: 1px solid black;*/
+    border: none;
     /*border-radius: 50% 50%;*/
     position: relative;
     overflow: hidden;
