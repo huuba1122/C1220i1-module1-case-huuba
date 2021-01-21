@@ -4,12 +4,14 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+body{
+    font-family: cursive;
+}
 h2{
     color: yellow;
 }
 .main{
-    background-image: url("bground4.png");
+    background-image: url("img/bground4.png");
     /*display: flex;*/
     height: 700px;
     justify-content: center;
@@ -29,6 +31,25 @@ h2{
 .heading span{
     font-size: 50px;
 }
+.guide{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.guide button{
+    background-color: #0037ff;
+    outline: none;
+    border-radius: 10px;
+    border: none;
+}
+.guide button a{
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    font-family: cursive;
+    padding: 0 5px;
+}
+
 .header-item {
     margin-top: 10px;
     /*display: flex;*/
@@ -58,31 +79,34 @@ h2{
 .score, #status{
     font-size: 32px;
     color: #ff015f;
+    font-weight: bold;
     /*text-align: center;*/
 }
 .highBoard{
     /*margin-top: 10px;*/
     position: absolute;
     top: 0;
-    right: 20px;
+    right: 10px;
     font-size: 32px;
     color: #ff015f;
 }
 .scoretable{
-    width: 180px;
+    width: 100%;
     color: white;
-    font-size: 24px;
+    font-size: 22px;
     /*border: 1px solid red;*/
     background-color: #2f5d96;
     border-radius: 5px;
     border-collapse: collapse;
+    opacity: 0.8;
 }
 th, td{
+    font-weight: 300;
     padding: 5px 0;
     border: 1px solid wheat;
 }
 .games{
-    margin-top: 40px;
+    margin-top: 104px;
     width: 100%;
     height: 350px;
     justify-items: center;
@@ -105,7 +129,7 @@ th, td{
 .hole {
     width: 120px;
     height: 80px;
-    background-image: url("hole2.png");
+    background-image: url("img/hole2.png");
     background-repeat: no-repeat;
     background-size: cover;
     /*background-size: auto;*/
@@ -122,23 +146,23 @@ th, td{
 .buttons{
     margin-top: 50px;
     text-align: center;
-    /*padding: 15px 45px;*/
-    /*background-color: inherit;*/
+    /*padding: 5px 45px;*/
+
     /*border: 1px solid #fff;*/
-    color: #fff;
-    border-radius: 3px;
-    outline: none;
 }
-.start, .stop{
+.start{
     padding: 5px 30px;
-}
-.stop{
-    display: none;
+    background-color: #7b14ea;
+    border-radius: 5px;
+    color: white;
+    font-size: 24px;
+    font-family: cursive;
+    font-weight: bold;
 }
 .cat{
     position: absolute;
     width: 100%;
-    background-image: url("zombie22.png");
+    background-image: url("img/zombie22.png");
     height: 100%;
     top: 100%;
     /*z-index: 1;*/

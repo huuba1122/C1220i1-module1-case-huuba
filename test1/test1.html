@@ -12,16 +12,20 @@
     <div class="header">
         <div class="heading">
             <span>HUNTING ZOMBIES</span>
+            <div class="guide">
+                <button><a href="index.html">Hướng dẫn</a></button>
+            </div>
         </div>
         <div class="header-item">
+
             <div>
-                <audio controls autoplay id="id-audio">
-                    <source src="../mp3/MainTheme.mp3">
+                <audio autoplay loop>
+                    <source src="audio/MainTheme.mp3">
                 </audio>
             </div>
             <div class="header-time">
                 <div>
-                    <span class="score">Score: 0</span>
+                    <span class="score">Kills</span>
                 </div>
                 <div>
                     <span id="status">00:00</span>
@@ -32,8 +36,8 @@
                 <span>Top 5 hunter</span>
                 <table class="scoretable">
                     <tr>
-                        <th>Name</th>
-                        <th>Score</th>
+                        <th>Hunter</th>
+                        <th>kills</th>
                     </tr>
                 </table>
             </div>
@@ -49,11 +53,11 @@
 <!--        <button class="stop" onclick="stopGame()">STOP</button>-->
     </div>
 </div>
-<div class="cursor"><img src="hamer1-removebg-preview.png"></div>
-<audio src="../mp3/PUNCH.mp3"></audio>
+<audio src="audio/Pop.mp3" id="pop"></audio>
+<div class="cursor"><img src="img/hamer1-removebg-preview.png"></div>
 </body>
 <!--<script src="test1.js"></script>-->
-<script src="classHole.js" id="puch-audio"></script>
+<script src="classHole.js"></script>
 
 <script>
 
@@ -63,9 +67,7 @@
     let scoreBoard = document.querySelector('.score');
     let cursor = document.querySelector(".cursor img");
     let status = document.getElementById('status');
-    const punchSound = document.getElementById('puch-audio');
-    // let startBtn =document.querySelector('.start');
-    // let stopBtn =document.querySelector('.stop');
+    let pop = document.getElementById('pop');
 
     let score;
     let timeMin = 500;
@@ -73,7 +75,7 @@
 
     let timelife = 25000;
 
-    /**     tạo bảng gồm n hàng n cột   */
+    /**     tạo bảng gồm 3 hàng n cột   */
 
     function createHoles(number) {
         let html = ``;
@@ -97,8 +99,8 @@
     /**             point*/
     function addScore(){
         score ++;
-        punchSound.play();
-        scoreBoard.textContent = score;
+        scoreBoard.textContent = 'Kill  '+score;
+        pop.play();
     }
     // window.addEventListener("click", function (e) {
     //     console.log(e.target);
@@ -162,7 +164,7 @@
                 // timeUp = true;
                 status.innerHTML = "Game Over!!!!! Your score : " + score;
             }
-        }, 1000);
+        }, 990);
     }
 
     function updateStatus(distance) {

@@ -10,9 +10,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
         <option value="HTML File" />
         <option value="CSS File" />
-        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -37,8 +37,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="H:\casssss\dapchuot\mp3" />
       <recent name="H:\casssss\dapchuot\img" />
+      <recent name="H:\casssss\dapchuot\test1\audio" />
+      <recent name="H:\casssss\dapchuot\mp3" />
       <recent name="H:\casssss\dapchuot\test1" />
     </key>
   </component>
@@ -71,7 +72,8 @@
       <workItem from="1611191744854" duration="2315000" />
       <workItem from="1611196490978" duration="862000" />
       <workItem from="1611204621742" duration="99000" />
-      <workItem from="1611237170743" duration="7033000" />
+      <workItem from="1611237170743" duration="7349000" />
+      <workItem from="1611267314938" duration="4830000" />
     </task>
     <servers />
   </component>
