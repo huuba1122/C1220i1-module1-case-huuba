@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.guide-item{
+    background-image: url("img/bground1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 700px;
+}
+.header-guide{
+    width: 100%;
+    text-align: center;
+    padding-top: 50px;
+
+}
+.header-guide span{
+    font-family: cursive;
+    font-size: 50px;
+    color: chartreuse;
+    padding-top: 50px;
+}
+.guide-content{
+    margin: auto;
+    /*background: white;*/
+    width: 400px;
+    text-align: center;
+}
+h2,h3{
+    color: white;
+}
+.btn{
+    width: 100%;
+    text-align: center;
+}
+.btn button{
+    margin-top: 20px;
+    font-size: 30px;
+    font-family: cursive;
+    padding: 5px 40px;
+    border-radius: 5px;
+}
+.btn button a{
+    color: chartreuse;
+    text-decoration: none;
+}
